@@ -1,20 +1,6 @@
 import 'package:dog_walker/constants.dart';
 import 'package:dog_walker/widgets/custom_button.dart';
 import 'package:dog_walker/widgets/custom_textfield.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-
-void showForgotPasswordDialog(BuildContext context) {
-  showDialog(
-      context: context,
-      builder: (ctx) => Dialog(
-            backgroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: const ForgotPasswordDialog(),
-          ));
-}
 
 class ForgotPasswordDialog extends StatefulWidget {
   const ForgotPasswordDialog({Key? key}) : super(key: key);
@@ -78,13 +64,6 @@ class _ForgotPasswordDialogState extends State<ForgotPasswordDialog> {
             const SizedBox(
               height: 10,
             ),
-            CustomButton(
-                onPressed: () async {
-                  await FirebaseAuth.instance
-                      .sendPasswordResetEmail(email: email!);
-                },
-                margin: 0,
-                text: 'Send')
           ],
         ),
       ),
