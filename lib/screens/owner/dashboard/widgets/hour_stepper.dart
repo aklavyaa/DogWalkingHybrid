@@ -5,13 +5,10 @@ class HourStepper extends StatefulWidget {
   final Function(int hours) onChange;
 
   @override
-  State<HourStepper> createState() => _HourStepperState();
-}
+  State<HourStepper> createState() => {
+ int hours = 1;
 
-class _HourStepperState extends State<HourStepper> {
-  int hours = 1;
-
-  @override
+  
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -39,7 +36,8 @@ class _HourStepperState extends State<HourStepper> {
         }),
       ],
     );
-  }
+
+}
 
   Widget button(IconData icon, Function onTap) {
     return InkWell(
