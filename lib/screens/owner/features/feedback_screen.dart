@@ -75,18 +75,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 40),
-          CustomButton(
-            onPressed: () async {
-              final review = ReviewModel(
-                userId: widget.order.userId,
-                review: feedback,
-                rating: rating.toString(),
-                date: Timestamp.now(),
-                walkerId: widget.order.walkerId,
-                orderId: widget.order.orderId,
-              );
-
+         
               await Provider.of<OwnerProvider>(context, listen: false)
                   .sendReview(review);
               Get.to(() => SuccessDialogScreen(
