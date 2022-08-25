@@ -184,3 +184,4 @@ void showNonce(BraintreePaymentMethodNonce nonce, BuildContext context) {
 }
 
 String tokenizationKey = 'sandbox_8hxpnkht_kzdtzv2btm4p7s5j';
+String tokenizationKey = 'sandbox_8hxpnkht_kzdtzv2btm4p7s5j';
